@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
+  Question({this.questionTask});
+
   //const Question({ Key? key }) : super(key: key);
   final String? questionTask; //never change after initilization
-  Question({this.questionTask});
+
   @override
   Widget build(BuildContext context) {
     return Container(
