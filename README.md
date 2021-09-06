@@ -15,4 +15,6 @@ This Section is more deeper into Flutter Basics, most of the sections is about B
 ![](images/ThemeData.png)
 
 Using themeData: argument for theme ajustment, appBarTheme: for the appBar, textTheme for the rest of the App
+In ThemeData:
+- PrimarySwatch: will get different shades which some Flutter widgets automatically use.
 ## 3.3 Adding Logic
