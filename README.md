@@ -10,11 +10,17 @@ This Section is more deeper into Flutter Basics, most of the sections is about B
 - Setting theme: ThemeData(fontFamily: ) in MaterialApp() for the whole application
 - Setting theme: for each small components in the application
 #### 3.2.1.1 Setting fonts in pubspec.yaml
+
 ![Setting fonts in pubspec.yaml](images/settingsFonts.png) 
 #### 3.2.1.2 Setting theme: ThemeData(fontFamily: ) in MaterialApp() for the whole application
 ![](images/ThemeData.png)
-
+## 3.3 Beside Knownledge
+### Date-Time format in flutter
+Libraby: import 'package:intl/date_symbol_data_local.dart';
+* DateFormat.yMMMd().format(DateTime.now()); With:
+- DateFormat.yMMMd(): is an extend consturctor of Time Format class
+- DateTime.now(): get the locally time from computer
 Using themeData: argument for theme ajustment, appBarTheme: for the appBar, textTheme for the rest of the App
 In ThemeData:
 - PrimarySwatch: will get different shades which some Flutter widgets automatically use.
-## 3.3 Adding Logic
+## 3.4 Adding Logic
