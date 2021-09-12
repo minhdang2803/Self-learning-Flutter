@@ -9,17 +9,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter App',
+      title: 'Personal Expenses',
       home: MyHomePage(),
       theme: ThemeData(
-          primarySwatch: Colors.purple,
-          fontFamily: 'Quicksand',
-          appBarTheme: AppBarTheme(
-              textTheme: ThemeData.light().textTheme.copyWith(
-                      headline6: TextStyle(
+        primarySwatch: Colors.purple,
+        fontFamily: 'Quicksand',
+        //TextTheme: Setting theme for the rest of the application
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headline1: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold),
+            ),
+        //appBarTheme: Setting theme for the appBar of the application
+        appBarTheme: AppBarTheme(
+          //default appbar theme
+          textTheme: ThemeData.light().textTheme.copyWith(
+                headline6: TextStyle(
+                    // big Text for appbar Text
                     fontFamily: 'OpenSans',
                     fontSize: 20,
-                  )))),
+                    fontWeight: FontWeight.bold),
+              ),
+        ),
+      ),
     );
   }
 }
@@ -59,10 +72,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Flutter App',
-          style: TextStyle(fontFamily: 'OpenSans'),
+          'Personal Expenses',
+          style: TextStyle(
+            fontFamily: 'OpenSans',
+          ),
         ),
-        actions: [
+        actions: <Widget>[
           IconButton(
             onPressed: () => _startAddNewTransaction(context),
             icon: Icon(Icons.add),

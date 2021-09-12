@@ -3,9 +3,10 @@ import 'package:udemy_project2/models/transaction.dart';
 import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
-  @override
   final List<Transaction> transaction;
+
   TransactionList(this.transaction);
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 300,
@@ -44,10 +45,7 @@ class TransactionList extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       transaction[index].title,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                     Text(
                       DateFormat.yMMMd().format(transaction[index].date),
