@@ -10,57 +10,78 @@ class TransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      child: ListView.builder(
-        itemBuilder: (context, index) {
-          return Card(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    vertical: 10,
-                    horizontal: 15,
+      child: transaction.isEmpty
+          ? Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Text(
+                    "No transactions",
+                    style: Theme.of(context).textTheme.headline5,
                   ),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Theme.of(context).primaryColorDark,
-                      width: 2,
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: 200,
+                    child: Image.asset(
+                      'assets/images/waiting.png',
+                      fit: BoxFit.cover,
                     ),
                   ),
-                  child: Text(
-                    '\$' +
-                        transaction[index]
-                            .amount
-                            .toStringAsFixed(2), // fix value of the dollars
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      transaction[index].title,
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    Text(
-                      DateFormat.yMMMd().format(transaction[index].date),
-                      style: TextStyle(
-                        color: Colors.grey,
+                ],
+              ),
+            )
+          : ListView.builder(
+              itemBuilder: (context, index) {
+                return Card(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: 15,
+                        ),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Theme.of(context).primaryColorDark,
+                            width: 2,
+                          ),
+                        ),
+                        child: Text(
+                          '\$' +
+                              transaction[index].amount.toStringAsFixed(
+                                  2), // fix value of the dollars
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
                       ),
-                    )
-                  ],
-                ),
-              ],
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            transaction[index].title,
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
+                          Text(
+                            DateFormat.yMMMd().format(transaction[index].date),
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                );
+              },
+              itemCount: transaction.length,
             ),
-          );
-        },
-        itemCount: transaction.length,
-      ),
     );
   }
 }
