@@ -17,11 +17,15 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Quicksand',
           //TextTheme: Setting theme for the rest of the application
           textTheme: ThemeData.light().textTheme.copyWith(
-                headline6: TextStyle(
-                    fontFamily: 'OpenSans',
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold),
+              headline6: TextStyle(
+                fontFamily: 'OpenSans',
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
               ),
+              headline5: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700)),
           appBarTheme: ThemeData.light().appBarTheme.copyWith(
               titleTextStyle: TextStyle(
                   fontFamily: 'OpenSans',
@@ -39,18 +43,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransaction = [];
 
-  List<Transaction> get getRecentTransactions {
-    return _userTransaction
-        .where((element) =>
-            element.date.isAfter(
-              DateTime.now().subtract(
-                Duration(days: 7),
-              ),
-            ) &&
-            element.date.isBefore(
-              DateTime.now().subtract(Duration(hours: 24)),
-            ))
-        .toList(); // because where( () => ()) return an Iterable so we need to cast .toList();
+  List<Transaction> get _getRecentTransactions {
+    return _userTransaction.where((element) {
+      return element.date.isAfter(
+        DateTime.now().subtract(
+          Duration(days: 7),
+        ),
+      );
+    }).toList(); // because where( () => ()) return an Iterable so we need to cast .toList();
   }
 
   void _addNewTransaction(String txtitle, double txAmount) {
@@ -65,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _startAddNewTransaction(BuildContext context) {
     showModalBottomSheet(
+      isScrollControlled: true,
       context: context,
       builder: (_) {
         return GestureDetector(
@@ -94,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Charts(getRecentTransactions),
+            Charts(_getRecentTransactions),
             TransactionList(_userTransaction)
           ],
         ),

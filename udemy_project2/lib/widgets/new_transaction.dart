@@ -26,26 +26,40 @@ class _NewTransactionState extends State<NewTransaction> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 5,
+      elevation: 6,
       child: Container(
+        height: MediaQuery.of(context).size.height * 0.63,
         padding: EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(
-                labelText: "Title",
-              ),
+              autofocus: true,
+              decoration:
+                  InputDecoration(labelText: "Title", hintText: "Input Title"),
               controller: titleController,
               onChanged: (value) => print(titleController.text),
             ),
             TextField(
               decoration: InputDecoration(
-                labelText: "Amount",
-              ),
+                  labelText: "Amount", hintText: "Number of amount"),
               controller: amountController,
               keyboardType: TextInputType.number,
               onSubmitted: (_) => submitData(),
+            ),
+            Row(
+              children: <Widget>[
+                TextButton(
+                  onPressed: null,
+                  child: Text(
+                    "Choose a date",
+                    style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontFamily: "OpenSans",
+                        fontWeight: FontWeight.w700),
+                  ),
+                )
+              ],
             ),
             // TextButton(
             //   child: Text("Add Transaction"),
