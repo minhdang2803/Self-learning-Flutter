@@ -24,6 +24,19 @@ This Section is more deeper into Flutter Basics, most of the sections is about B
 
 ![ThemeData](images/ThemeData.png)
 
+There is some update for the Flutter 2.5 version:
+
+- display4 => headline1;
+- display3 => headline2;
+- display2 => headline3;
+- display1 => headline4;
+- headline => headline5;
+- title    => headline6;
+- subhead  => subtitle1;
+- subtitle => subtitle2;
+- body2    => bodyText1;
+- body     => bodyText2;
+
 ## 3.3 Beside Knownledge
 
 ### Date-Time format in flutter
@@ -39,3 +52,12 @@ In ThemeData:
 - PrimarySwatch: will get different shades which some Flutter widgets automatically use.
 
 ## 3.4 Adding Logic
+
+## 3.5 Adding Picture to Application
+
+- Need an image (from any source)
+
+- Copy image into the images folder in project
+
+- In the dart file, using Image.asset('link to the image')
+
