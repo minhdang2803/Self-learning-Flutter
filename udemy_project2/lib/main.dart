@@ -53,14 +53,22 @@ class _MyHomePageState extends State<MyHomePage> {
     }).toList(); // because where( () => ()) return an Iterable so we need to cast .toList();
   }
 
-  void _addNewTransaction(String txtitle, double txAmount) {
+  void _addNewTransaction(
+      String txtitle, double txAmount, DateTime chooseDate) {
     final newTransaction = Transaction(
       id: DateTime.now().toString(),
       title: txtitle,
       amount: txAmount,
-      date: DateTime.now(),
+      date: chooseDate,
     );
     setState(() => _userTransaction.add(newTransaction));
+  }
+
+  // Make Delete Transaction
+  void _deleteTransaction(String id) {
+    setState(
+      () => _userTransaction.removeWhere((element) => element.id == id),
+    );
   }
 
   void _startAddNewTransaction(BuildContext context) {
@@ -70,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
       builder: (_) {
         return GestureDetector(
           child: NewTransaction(_addNewTransaction),
-          onTap: () {},
+          onTap: null,
           behavior: HitTestBehavior.opaque,
         );
       },
@@ -96,7 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Charts(_getRecentTransactions),
-            TransactionList(_userTransaction)
+            TransactionList(
+              transaction: _userTransaction,
+              removeFuctuion: _deleteTransaction,
+            ),
           ],
         ),
       ),
@@ -104,6 +115,9 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => _startAddNewTransaction(context),
         child: Icon(Icons.add),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
       ),
     );
   }

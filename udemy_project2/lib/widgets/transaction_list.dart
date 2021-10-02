@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 
 class TransactionList extends StatefulWidget {
   final List<Transaction> transaction;
-
-  TransactionList(this.transaction);
+  final Function? removeFuctuion;
+  TransactionList({required this.transaction, this.removeFuctuion});
 
   @override
   State<TransactionList> createState() => _TransactionListState();
@@ -15,11 +15,11 @@ class _TransactionListState extends State<TransactionList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 425,
       child: widget.transaction.isEmpty
           ? Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     "No transactions",
@@ -42,7 +42,7 @@ class _TransactionListState extends State<TransactionList> {
               itemBuilder: (context, index) {
                 return Card(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   child: ListTile(
                       leading: CircleAvatar(
@@ -73,8 +73,8 @@ class _TransactionListState extends State<TransactionList> {
                       ),
                       trailing: IconButton(
                         icon: Icon(Icons.delete),
-                        onPressed: () =>
-                            setState(() => widget.transaction.removeAt(index)),
+                        onPressed: () => widget
+                            .removeFuctuion!(widget.transaction[index].id),
                       )),
                 );
               },

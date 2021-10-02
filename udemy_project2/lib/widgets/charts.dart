@@ -35,6 +35,9 @@ class Charts extends StatelessWidget {
   Widget build(BuildContext context) {
     print(transactionsValues);
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
       elevation: 6,
       margin: EdgeInsets.all(20),
       child: Container(

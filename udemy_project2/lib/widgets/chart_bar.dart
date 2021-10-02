@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ChartBar extends StatefulWidget {
-  final String label;
-  final double spendAmount;
-  final double spendingPercent;
   ChartBar(
       {required this.label,
       required this.spendAmount,
       required this.spendingPercent});
+
+  final String label;
+  final double spendAmount;
+  final double spendingPercent;
 
   @override
   State<ChartBar> createState() => _ChartBarState();
@@ -19,7 +20,7 @@ class _ChartBarState extends State<ChartBar> {
     return Column(
       children: <Widget>[
         FittedBox(
-          child: Text("\$${widget.spendAmount.toStringAsFixed(0)}"),
+          child: Text("\$${widget.spendAmount.toStringAsFixed(2)}"),
         ),
         SizedBox(
           height: 4,
