@@ -32,15 +32,16 @@ class _NewTransactionState extends State<NewTransaction> {
 
   // Get Data from User input;
   void _submitData() {
-    final String enterTitle = _titleController.text;
+    final enterTitle = _titleController.text;
     final enterAmount = double.parse(_amountController.text);
     if (enterAmount < 0 || enterTitle.isEmpty) {
+      Navigator.pop(context);
       return;
     } else {
       widget.addTx!(
         enterTitle,
         enterAmount,
-        _selectDate,
+        _selectDate ?? DateTime.now(),
       );
     }
     Navigator.of(context).pop(); // close the popup after done input

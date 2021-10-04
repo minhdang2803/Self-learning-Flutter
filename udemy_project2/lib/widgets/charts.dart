@@ -20,10 +20,10 @@ class Charts extends StatelessWidget {
         }
       }
       return {
-        'Date': DateFormat.E().format(weekDate).substring(0, 1),
+        'Date': DateFormat.E().format(weekDate).substring(0, 3),
         'Amount': sumOfMoney,
       };
-    });
+    }).reversed.toList();
   }
 
   double get totalSpending {
