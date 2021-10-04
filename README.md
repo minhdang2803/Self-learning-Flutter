@@ -19,7 +19,9 @@ This Section is more deeper into Flutter Basics, most of the sections is about B
 #### 3.2.1.1 Setting fonts in pubspec.yaml
 
 <img src="images/settingsFonts.png" width="700">
+
 #### 3.2.1.2 Setting theme: ThemeData(fontFamily: ) in MaterialApp() for the whole application
+
 <img src="images/ThemeData.png" width="700">
 
 There is some update for the Flutter 2.5 version:
