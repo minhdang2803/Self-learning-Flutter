@@ -49,7 +49,7 @@ Libraby: import 'package:intl/date_symbol_data_local.dart';
   - **DateTime.now()**: get the locally time from computer
 Using themeData: argument for theme ajustment, appBarTheme: for the appBar, textTheme for the rest of the App
 - **In ThemeData**:
-  - **PrimarySwatch**: will get different shades which some Flutter widgets automatically use.
+  - **PrimarySwatch**: will get different shades which is used by some Flutter widgets automatically.
   - textTheme: ThemeData.light().textTheme.copyWith() is the setting for the theme of whole application, inside copyWith, we have many parameter for each kind of title we want to use, from the **headline6 to headline**
   - Easily we can edit the properties of the title by using **TextStyle()**, with many named parameters inside like: **fontFamily, fontWeight, fontSize..**
 
