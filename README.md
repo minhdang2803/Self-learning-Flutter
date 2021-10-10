@@ -98,6 +98,7 @@ We can check the orientarion of the device by using **Orientation.lanscape** or 
 
 - Make a variable: **bool isLanscape = MediaQuery.of(context).orientation == Orientation.lanscape**
 <img src="./images/MediaQuery.png" width ="700">
+
 - This will check the orientaion. if the **isLanscape == true** mean that the orientation of the device is now lanscape, else it is now portrait.
 - An entire code in the **home_page.dart**
 
