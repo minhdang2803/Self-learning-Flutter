@@ -86,7 +86,7 @@ Tips:
 Explanation:
 
 - **appBar.preferredSize.height** is the height for AppBar
-- **MediaQuery.of(context).padding.top** is the padding field that is use to display the status bar on the top of the AppBar
+- **MediaQuery.of(context).padding.top** is the padding field that is used to display the status bar on the top of the AppBar
 
 We also need to be aware of DRY (**Dont't Repeat Yourself**) because of inproving the performent of the app by not making again and again the same Object
 
