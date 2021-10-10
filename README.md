@@ -106,7 +106,7 @@ We can check the orientarion of the device by using **Orientation.lanscape** or 
 
 ## 4.3 Keyboard hides your ShowModalBottomSheet
 
-If a keyboard hides your ShowModalBottomSheet, you can use **SingleChildScrollView** and manually adjust the padding for each Edge of ShowModalBottomSheet widget by:
+If a keyboard hides your ShowModalBottomSheet, you can use **SingleChildScrollView** and manually adjust the padding for each Edge of Card widget covered by ShowModalBottomSheet widget by:
 
 <img src="./images/keyboardWithModalBottomSheet.png" width ="700">
 
