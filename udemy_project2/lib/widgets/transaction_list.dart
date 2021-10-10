@@ -82,11 +82,24 @@ class _TransactionListState extends State<TransactionList> {
                         fontSize: 14,
                       ),
                     ),
-                    trailing: IconButton(
-                      icon: Icon(Icons.delete),
-                      onPressed: () =>
-                          widget.removeFuctuion!(widget.transaction[index].id),
-                    ),
+                    trailing: (MediaQuery.of(context).size.width > 480)
+                        ? TextButton.icon(
+                            onPressed: () => widget
+                                .removeFuctuion!(widget.transaction[index].id),
+                            icon: Icon(Icons.delete),
+                            label: Text("Delete"),
+                            style: TextButton.styleFrom(
+                              primary: Theme.of(context).errorColor,
+                            ),
+                          )
+                        : IconButton(
+                            icon: Icon(
+                              Icons.delete,
+                              color: Theme.of(context).errorColor,
+                            ),
+                            onPressed: () => widget
+                                .removeFuctuion!(widget.transaction[index].id),
+                          ),
                   ),
                 ),
               );

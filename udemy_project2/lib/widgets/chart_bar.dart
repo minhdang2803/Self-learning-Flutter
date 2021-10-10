@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ChartBar extends StatefulWidget {
+  final String label;
+  final double spendAmount;
+  final double spendingPercent;
   ChartBar(
       {required this.label,
       required this.spendAmount,
       required this.spendingPercent});
-
-  final String label;
-  final double spendAmount;
-  final double spendingPercent;
 
   @override
   State<ChartBar> createState() => _ChartBarState();

@@ -24,7 +24,7 @@ This Section is more deeper into Flutter Basics, most of the sections is about B
 
 <img src="images/ThemeData.png" width="700">
 
-There is some update for the Flutter 2.5 version:
+There is some update for the Flutter 2.5.0 version:
 
 - display4 => headline1;
 - display3 => headline2;
@@ -87,3 +87,29 @@ Explanation:
 
 - **appBar.preferredSize.height** is the height for AppBar
 - **MediaQuery.of(context).padding.top** is the padding field that is use to display the status bar on the top of the AppBar
+
+We also need to be aware of DRY (**Dont't Repeat Yourself**) because of inproving the performent of the app by not making again and again the same Object
+
+- Solution: we can make a new variable with the syntax: **final variable_name** and assign it with the widget
+
+## 4.2 Some changes in diffrent orientation
+
+We can check the orientarion of the device by using **Orientation.lanscape** or **Orientation.portrait** which are respective for lanscacpe and portrait screen.
+
+- Make a variable: **bool isLanscape = MediaQuery.of(context).orientation == Orientation.lanscape**
+<img src="./images/MediaQuery.png" width ="700">
+- This will check the orientaion. if the **isLanscape == true** mean that the orientation of the device is now lanscape, else it is now portrait.
+- An entire code in the **home_page.dart**
+
+<img src="./images/OrientationExample.png" width ="500px" height ="900" style="vertical-align: center;">
+
+## 4.3 Keyboard hide ShowModalBottomSheet
+
+If a keyboard hide your ShowModalBottomSheet, you can use **SingleChildScrollView** and manually adjust the padding for each Edge of ShowModalBottomSheet widget by:
+
+<img src="./images/keyboardWithModalBottomSheet.png" width ="700">
+
+When your keyboard hides ShowModalBottomSheet widget:
+<img src="./images/KeyboardHideBottomSheets.png" width="429.8mm" height="800.6mm">
+Applying the method above:
+<img src="./images/KeyboardAndBottomSheets.png" width="429.8mm" height="800.6mm">

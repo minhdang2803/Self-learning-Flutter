@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+
 import '../models/transaction.dart';
 import 'transaction_list.dart';
 import 'new_transaction.dart';
@@ -58,8 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // Lanscape checking
-    bool _isLanscape = MediaQuery.of(context).orientation ==
+    final isIOS = Platform.isIOS;
+    final mediaQuery = MediaQuery.of(context);
+    bool _isLanscape = mediaQuery.orientation ==
         Orientation.landscape; // Check for the Orientation of Apps
     // AppBar
     final AppBar appBar = AppBar(
@@ -84,25 +88,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Show Charts"),
-                  Switch(
-                      value: _allowSwitch,
-                      onChanged: (value) =>
-                          setState(() => _allowSwitch = value))
+                  Switch.adaptive(
+                    value: _allowSwitch,
+                    onChanged: (value) => setState(() => _allowSwitch = value),
+                  )
                 ],
               ),
             if (_isLanscape)
               (_allowSwitch == true)
                   ? Container(
-                      height: (MediaQuery.of(context).size.height -
+                      height: (mediaQuery.size.height -
                               appBar.preferredSize.height -
-                              MediaQuery.of(context).padding.top) *
+                              mediaQuery.padding.top) *
                           0.7,
                       child: Charts(_getRecentTransactions),
                     )
                   : Container(
-                      height: (MediaQuery.of(context).size.height -
+                      height: (mediaQuery.size.height -
                               appBar.preferredSize.height -
-                              MediaQuery.of(context).padding.top) *
+                              mediaQuery.padding.top) *
                           0.7,
                       child: TransactionList(
                         transaction: _userTransaction,
@@ -112,17 +116,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
             if (_isLanscape == false)
               Container(
-                height: (MediaQuery.of(context).size.height -
+                height: (mediaQuery.size.height -
                         appBar.preferredSize.height -
-                        MediaQuery.of(context).padding.top) *
+                        mediaQuery.padding.top) *
                     0.3,
                 child: Charts(_getRecentTransactions),
               ),
             if (_isLanscape == false)
               Container(
-                height: (MediaQuery.of(context).size.height -
+                height: (mediaQuery.size.height -
                         appBar.preferredSize.height -
-                        MediaQuery.of(context).padding.top) *
+                        mediaQuery.padding.top) *
                     0.7,
                 child: TransactionList(
                   transaction: _userTransaction,
@@ -134,10 +138,12 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _startAddNewTransaction(context),
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: isIOS
+          ? null
+          : FloatingActionButton(
+              onPressed: () => _startAddNewTransaction(context),
+              child: Icon(Icons.add),
+            ),
     );
   }
 }

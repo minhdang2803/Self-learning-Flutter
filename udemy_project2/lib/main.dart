@@ -11,18 +11,20 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       theme: ThemeData(
         primarySwatch: Colors.purple,
+        errorColor: Colors.red,
         fontFamily: 'Quicksand',
         //TextTheme: Setting theme for the rest of the application
         textTheme: ThemeData.light().textTheme.copyWith(
-            headline6: TextStyle(
-              fontFamily: 'OpenSans',
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-            ),
-            headline5: TextStyle(
+              headline6: TextStyle(
                 fontFamily: 'OpenSans',
-                fontSize: 18,
-                fontWeight: FontWeight.w700)),
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
+              headline5: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700),
+            ),
         appBarTheme: ThemeData.light().appBarTheme.copyWith(
               titleTextStyle: TextStyle(
                 fontFamily: 'OpenSans',
