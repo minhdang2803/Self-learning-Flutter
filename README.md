@@ -92,7 +92,7 @@ We also need to be aware of DRY (**Dont't Repeat Yourself**) because of inprovin
 
 - Solution: we can make a new variable with the syntax: **final variable_name** and assign it with the widget
 
-## 4.2 Some changes in diffrent Orientations
+## 4.2 Some changes in different Orientations
 
 We can check the orientarion of the device by using **Orientation.lanscape** or **Orientation.portrait** which are respective for lanscacpe and portrait screen.
 
