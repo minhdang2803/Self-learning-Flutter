@@ -94,7 +94,7 @@ We also need to be aware of DRY (**Dont't Repeat Yourself**) because of improvin
 
 ## 4.2 Some changes in different Orientations
 
-We can check the orientarion of the device by using **Orientation.lanscape** or **Orientation.portrait** which are respective for lanscacpe and portrait screen.
+We can check the orientarion of the device by using **Orientation.lanscape** or **Orientation.portrait** which are respective for lanscacpe and portrait screen orientation.
 
 - Make a variable: **bool isLanscape = MediaQuery.of(context).orientation == Orientation.lanscape**
 <img src="./images/MediaQuery.png" width ="700">
