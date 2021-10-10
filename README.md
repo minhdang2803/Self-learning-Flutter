@@ -69,7 +69,7 @@ Some adjustments that a beginner should use to enhance UI for each specific devi
 
 ## 4.1  Dynamically calculating the height size of each Widget in Flutter
 
-We can use the MediaQuery.of(context).size.height * percent to calculate the height for each widgets. For an example here:
+We can use the MediaQuery.of(context).size.height * percentage of the current wrapper widget to calculate the height for each widgets. For an example here:
 
 - The height for **ChartBar Widget** takes 40% of the screen
 - The **Transactions' List** widget take 60% of the height for whole the screen
