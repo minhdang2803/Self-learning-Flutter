@@ -109,7 +109,7 @@ If a keyboard hide your ShowModalBottomSheet, you can use **SingleChildScrollVie
 
 <img src="./images/keyboardWithModalBottomSheet.png" width ="700">
 
-When your keyboard hides ShowModalBottomSheet widget:
-<img src="./images/KeyboardHideBottomSheets.png" width="429.8mm" height="800.6mm">
-Applying the method above:
-<img src="./images/KeyboardAndBottomSheets.png" width="429.8mm" height="800.6mm">
+- When your keyboard hides ShowModalBottomSheet widget:
+<img src="./images/KeyboardHideBottomSheets.png" width="330.8mm" height="600.6mm">
+- Applying the method above:
+<img src="./images/KeyboardAndBottomSheets.png" width="330.8mm" height="600.6mm">
