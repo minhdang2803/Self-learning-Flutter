@@ -101,7 +101,7 @@ We can check the orientarion of the device by using **Orientation.lanscape** or 
 - This will check the orientaion. if the **isLanscape == true** mean that the orientation of the device is now lanscape, else it is now portrait.
 - An entire code in the **home_page.dart**
 
-<img src="./images/OrientationExample.png" width ="500px" height ="900" style="vertical-align: center;">
+![OrientationCheck](./images/OrientationExample.png)
 
 ## 4.3 Keyboard hide ShowModalBottomSheet
 
