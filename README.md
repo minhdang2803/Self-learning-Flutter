@@ -41,7 +41,7 @@ There is some update for the Flutter 2.5.0 version:
 
 ### Date-Time format in flutter
 
-Libraby: import 'package:intl/date_symbol_data_local.dart';
+**Library:** import 'package:intl/date_symbol_data_local.dart';
 
 - **DateFormat.yMMMd().format(DateTime.now());** With:
 
